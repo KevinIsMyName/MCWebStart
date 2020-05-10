@@ -3,7 +3,7 @@
 A PyFlask web server where you can start a Minecraft server!
 
 ### Quick Start
-1. Create your venv with `python -m venv venv`
+1. Create your venv with `python -m venv venv`. Don't forget to activate it!
 2. Install packages with `pip install -r requirements.txt`
 3. Configure the port and script in app.py
     - In this case, the script starting the server .jar with the path given. (startRemote.bat for me, which redirects to
@@ -17,3 +17,4 @@ A PyFlask web server where you can start a Minecraft server!
  - enable-query=true in server.properties
  - This uses Dinnerbone's mcstatus PyPi package. You can find more about it [here](https://github.com/Dinnerbone/mcstatus) 
  - This runs on development server. I'm not experienced enough to put it into a production server, but I'm still learning, OK?
+ i
