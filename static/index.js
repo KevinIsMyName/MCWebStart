@@ -7,7 +7,7 @@ window.onload = function () {
         if (resp.status === "online") {
             let output = document.getElementById("output");
 
-            // Button
+            // Button text
             document.getElementById("btn").value = "Turn off";
 
             // Server name + version
@@ -38,8 +38,10 @@ document.getElementById("btn").addEventListener("click", function () {
     let queryStr;
     if (document.getElementById("status").innerText === "online") {
         queryStr = "turnoff";
+        alert("To be implemented");
     } else {
         queryStr = "turnon";
+        alert("To be implemented");
     }
     let xhr = new XMLHttpRequest();
     xhr.responseType = "json";

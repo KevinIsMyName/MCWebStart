@@ -1,0 +1,1 @@
+enable-query=true in server.properties
