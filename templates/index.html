@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+    <script type="text/javascript" src="{{ url_for("static", filename="index.js") }}" defer></script>
+</head>
+<body>
+<h2> Server status:</h2> <h3 id="status"></h3>
+<input id="btn" type="button" style="visibility: hidden" value="Please wait..."><br><br><br><br>
+<div id="output">
+
+</div>
+</body>
+</html>
