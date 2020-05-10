@@ -24,7 +24,7 @@ def checkStatus():
 @app.route("/turnon")
 def turnon():
     try:
-        os.startfile("startRemote.bat")
+        os.startfile("startMCS.bat")
         return jsonify({"return": 0})
     except:
         return jsonify({"return": -1})
