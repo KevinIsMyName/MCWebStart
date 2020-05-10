@@ -2,13 +2,13 @@ window.onload = function () {
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", function () {
         let resp = this.response;
-        console.log(this.response);
+        console.log(resp);
         document.getElementById("status").innerText = resp.status;
         if (resp.status === "online") {
             let output = document.getElementById("output");
 
             // Button text
-            document.getElementById("btn").value = "Turn off";
+            document.getElementById("btn").style.visibility = "hidden";
 
             // Server name + version
             let serverTitle = document.createElement("h3");
@@ -25,9 +25,9 @@ window.onload = function () {
             }
             output.append(playerList);
         } else {
-            document.getElementById("btn").value = "Turn on";
+            document.getElementById("btn").style.visibility = "visible";
         }
-        document.getElementById("btn").style.visibility = "visible";
+
     });
     xhr.responseType = "json";
     xhr.open("GET", "checkStatus");
@@ -36,18 +36,20 @@ window.onload = function () {
 
 document.getElementById("btn").addEventListener("click", function () {
     let queryStr;
-    if (document.getElementById("status").innerText === "online") {
-        queryStr = "turnoff";
-        alert("To be implemented");
-    } else {
+    if (document.getElementById("status").innerText === "offline") {
         queryStr = "turnon";
-        alert("To be implemented");
+        document.getElementById("btn").style.visibility = "hidden";
     }
     let xhr = new XMLHttpRequest();
     xhr.responseType = "json";
     xhr.addEventListener("load", function () {
         let resp = this.response;
         console.log(resp);
+        if (resp.return === 0) {
+            alert("Starting server...refresh the page in a few seconds. Do not spam the button.")
+        } else {
+            alert("An unexpected error occurred.")
+        }
     });
     xhr.open("GET", queryStr);
     xhr.send()

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, jsonify
+from flask import Flask, render_template, jsonify
 from mcstatus import MinecraftServer
 import os
 
@@ -23,11 +23,12 @@ def checkStatus():
         return jsonify({"status": "offline"})
 @app.route("/turnon")
 def turnon():
-    pass
+    try:
+        os.startfile("startRemote.bat")
+        return jsonify({"return": 0})
+    except:
+        return jsonify({"return": -1})
 
-@app.route("/turnoff")
-def turnoff():
-    pass
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="25566")
