@@ -15,4 +15,5 @@ A PyFlask web server where you can start a Minecraft server!
 
 ### Notes: 
  - enable-query=true in server.properties
- = This uses Dinnerbone's mcstatus PyPi package. You can find more about it [here](https://github.com/Dinnerbone/mcstatus) 
+ - This uses Dinnerbone's mcstatus PyPi package. You can find more about it [here](https://github.com/Dinnerbone/mcstatus) 
+ - This runs on development server. I'm not experienced enough to put it into a production server, but I'm still learning, OK?
