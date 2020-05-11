@@ -13,7 +13,6 @@ def checkStatus():
     server = MinecraftServer.lookup("localhost:25565")
     try:
         query = server.query()
-        print("The server has the following players online: {0}".format(", ".join(query.players.names)))
         return jsonify({
             "raw": query.raw,
             "players": query.players.names,
